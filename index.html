@@ -1,42 +1,53 @@
 <!DOCTYPE html>
 <html lang="sq">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dita e Tokës 🌍</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dita e Tokës 🌍</title>
 
-  <style>
-    body {
-      font-family: Arial;
-      background: linear-gradient(#e8f5e9, #c8e6c9);
-      text-align: center;
-      padding: 20px;
-    }
+<style>
+body {
+  font-family: Arial;
+  background: linear-gradient(#e8f5e9, #c8e6c9);
+  text-align: center;
+  padding: 20px;
+}
 
-    h1 { color: #2e7d32; }
+h1 {
+  color: #2e7d32;
+}
 
-    button {
-      padding: 12px 16px;
-      margin: 6px;
-      border: none;
-      border-radius: 8px;
-      background: #43a047;
-      color: white;
-      cursor: pointer;
-      font-size: 15px;
-    }
+button {
+  padding: 12px 14px;
+  margin: 5px;
+  border: none;
+  border-radius: 8px;
+  background: #43a047;
+  color: white;
+  cursor: pointer;
+}
 
-    #box {
-      margin-top: 20px;
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      display: inline-block;
-      max-width: 750px;
-      text-align: left;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-  </style>
+#box {
+  margin-top: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.cert {
+  margin-top: 15px;
+  padding: 15px;
+  border: 2px dashed #2e7d32;
+  background: #fff8e1;
+  border-radius: 10px;
+  text-align: center;
+}
+</style>
 </head>
 
 <body>
@@ -44,61 +55,60 @@
 <h1>🌍 Dita e Tokës</h1>
 <p>Projekt edukativ për nxënësit 📚</p>
 
+<p><b>👦 Nxënësi: Anaid</b></p>
+
 <button onclick="mesim()">📘 Mësim</button>
 <button onclick="probleme()">⚠️ Probleme</button>
 <button onclick="keshilla()">🌱 Këshilla</button>
 <button onclick="quiz()">🎮 Kuiz</button>
+<button onclick="certifikate()">🏆 Certifikatë</button>
 
 <div id="box">
 Zgjidh një seksion për të mësuar 😊
 </div>
 
+<!-- CERTIFIKATA -->
+<div id="cert" style="display:none;"></div>
+
 <script>
 
 function mesim() {
   document.getElementById("box").innerHTML =
-    "<h2>📘 Mësim: Çfarë është Toka?</h2>" +
-
-    "<p><b>Toka</b> është planeti ku jetojmë dhe është i vetmi i njohur me jetë.</p>" +
-
-    "<p>🌍 Ajo ka 3 pjesë kryesore për jetën:</p>" +
-    "<ul>" +
-    "<li>🌬️ Atmosfera – ajri që ne thithim</li>" +
-    "<li>🌊 Hidrosfera – të gjitha ujërat (dete, lumenj, oqeane)</li>" +
-    "<li>🌱 Litosfera – toka dhe shkëmbinjtë</li>" +
-    "</ul>" +
-
-    "<p>☀️ Toka rrotullohet rreth Diellit dhe kjo krijon stinët.</p>" +
-
-    "<p>🌿 Pa Tokën nuk do të kishte njerëz, kafshë apo bimë.</p>";
+  "<h2>📘 Mësim: Toka</h2>" +
+  "<p>Toka është planeti ku jetojmë dhe i vetmi i njohur me jetë.</p>" +
+  "<p>Ajo ka 3 pjesë kryesore:</p>" +
+  "<ul>" +
+  "<li>🌬️ Atmosfera – ajri që thithim</li>" +
+  "<li>🌊 Hidrosfera – uji (dete, lumenj, oqeane)</li>" +
+  "<li>🌱 Litosfera – toka dhe shkëmbinjtë</li>" +
+  "</ul>" +
+  "<p>☀️ Toka rrotullohet rreth Diellit dhe krijon stinët.</p>" +
+  "<p>Pa Tokën nuk ka jetë.</p>";
 }
 
 function probleme() {
   document.getElementById("box").innerHTML =
-    "<h2>⚠️ Problemet e Tokës</h2>" +
-
-    "<ul>" +
-    "<li>🚗 Ndotja e ajrit nga makinat dhe fabrikat</li>" +
-    "<li>🌊 Plastika në oqeane dhe dete</li>" +
-    "<li>🌳 Prerja e pyjeve (shpyllëzimi)</li>" +
-    "<li>🔥 Ngrohja globale dhe ndryshimi i klimës</li>" +
-    "</ul>" +
-
-    "<p>Këto probleme dëmtojnë kafshët, bimët dhe njerëzit.</p>";
+  "<h2>⚠️ Probleme të Tokës</h2>" +
+  "<ul>" +
+  "<li>🚗 Ndotja e ajrit</li>" +
+  "<li>🌊 Plastika në dete</li>" +
+  "<li>🌳 Prerja e pyjeve</li>" +
+  "<li>🔥 Ngrohja globale</li>" +
+  "</ul>" +
+  "<p>Këto dëmtojnë natyrën dhe jetën.</p>";
 }
 
 function keshilla() {
   document.getElementById("box").innerHTML =
-    "<h2>🌱 Këshilla për të mbrojtur Tokën</h2>" +
-
-    "<ul>" +
-    "<li>♻️ Riciklo plastikën, letrën dhe metalin</li>" +
-    "<li>🌳 Mbill pemë dhe kujdesu për natyrën</li>" +
-    "<li>💧 Kurse ujin</li>" +
-    "<li>🚲 Përdor biçikletën ose ec në këmbë</li>" +
-    "<li>🚯 Mos hidh mbeturina në natyrë</li>" +
-    "<li>💡 Fik dritat kur nuk i përdor</li>" +
-    "</ul>";
+  "<h2>🌱 Këshilla për mbrojtjen e Tokës</h2>" +
+  "<ul>" +
+  "<li>♻️ Riciklo</li>" +
+  "<li>🌳 Mbill pemë</li>" +
+  "<li>💧 Kurse ujin</li>" +
+  "<li>🚲 Përdor biçikletën</li>" +
+  "<li>🚯 Mos ndot natyrën</li>" +
+  "<li>💡 Fik dritat</li>" +
+  "</ul>";
 }
 
 function quiz() {
@@ -114,12 +124,26 @@ function quiz() {
   if (q3 === "po") piket++;
 
   document.getElementById("box").innerHTML =
-    "<h2>🎮 Kuizi</h2>" +
-    "<p>Ke marrë " + piket + " nga 3 pikë.</p>" +
+  "<h2>🎮 Rezultati</h2>" +
+  "<p>Ke marrë " + piket + " nga 3 pikë.</p>" +
+  (piket === 3
+    ? "<p>🌟 Shkëlqyeshëm Anaid! Je Mik i Tokës!</p>"
+    : "<p>👍 Shumë mirë! Vazhdo të mësosh.</p>");
+}
 
-    (piket === 3
-      ? "<p>🌟 Shkëlqyeshëm! Je Mik i Tokës!</p>"
-      : "<p>👍 Mirë! Por mund të mësosh edhe më shumë.</p>");
+function certifikate() {
+  document.getElementById("cert").style.display = "block";
+
+  document.getElementById("cert").innerHTML =
+  "<div class='cert'>" +
+  "<h2>🏆 CERTIFIKATË</h2>" +
+  "<p>Kjo certifikatë i jepet:</p>" +
+  "<h1>ANAID</h1>" +
+  "<p>për pjesëmarrje në projektin:</p>" +
+  "<h3>🌍 Dita e Tokës</h3>" +
+  "<p>Je Mik i Tokës 🌱♻️</p>" +
+  "<button onclick='window.print()'>🖨️ Printo</button>" +
+  "</div>";
 }
 
 </script>
