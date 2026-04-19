@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <title>Dita e Tokës 🌍</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: linear-gradient(#a8e6cf, #dcedc1);
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #2e7d32;
+    }
+
+    button {
+      padding: 12px 20px;
+      margin: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background-color: #43a047;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2e7d32;
+    }
+
+    #box {
+      margin-top: 20px;
+      font-size: 18px;
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      display: inline-block;
+      max-width: 400px;
+    }
+
+    img {
+      width: 120px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🌍 Dita e Tokës</h1>
+<p>Mirë se erdhe! Mëso si të kujdesemi për planetin tonë 💚</p>
+
+<button onclick="info()">📘 Çfarë është?</button>
+<button onclick="keshilla()">🌱 Këshilla</button>
+<button onclick="quiz()">🎮 Quiz</button>
+
+<div id="box">Kliko një buton për të filluar 😊</div>
+
+<img src="https://cdn-icons-png.flaticon.com/512/414/414927.png" alt="Earth">
+
+<script>
+function info() {
+  document.getElementById("box").innerHTML =
+    "🌍 Dita e Tokës festohet më 22 Prill çdo vit.<br><br>" +
+    "Është një ditë kur ne mësojmë si të mbrojmë natyrën dhe planetin tonë!";
+}
+
+function keshilla() {
+  document.getElementById("box").innerHTML =
+    "🌱 Mos hidh mbeturina<br>" +
+    "♻️ Riciklo sa më shumë<br>" +
+    "🚲 Përdor biçikletën<br>" +
+    "🌳 Mbill pemë<br>" +
+    "💧 Kurse ujin";
+}
+
+function quiz() {
+  let answer = prompt("A duhet të mbrojmë natyrën? (po/jo)");
+
+  if(answer && answer.toLowerCase() === "po") {
+    alert("Bravo! 🌟 Ti je mik i Tokës!");
+  } else {
+    alert("Provo përsëri 😊");
+  }
+}
+</script>
+
+</body>
+</html>
