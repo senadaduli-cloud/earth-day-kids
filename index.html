@@ -119,3 +119,23 @@ function reset() {
 
 </body>
 </html>
+<div style="margin-top:20px;">
+  <button onclick="certifikate()">🏆 Merr Certifikatën</button>
+</div>
+
+<div id="cert" style="display:none; margin-top:20px; padding:20px; border:3px dashed #2e7d32; background:#fff8e1; border-radius:10px; max-width:600px; margin:auto;">
+  <h2>🏆 CERTIFIKATË</h2>
+
+  <p>Kjo certifikatë i jepet:</p>
+  <h1 style="color:#2e7d32;">Anaid</h1>
+
+  <p>për pjesëmarrje në projektin:</p>
+  <h3>🌍 Dita e Tokës</h3>
+
+  <p>Je Mik i Tokës 🌱♻️</p>
+
+  <button onclick="window.print()">🖨️ Printo</button>
+</div>
+function certifikate() {
+  document.getElementById("cert").style.display = "block";
+}
