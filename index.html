@@ -4,48 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dita e Tokës 🌍</title>
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background: #e8f5e9;
-      margin: 0;
-      padding: 20px;
-    }
-
-    h1 {
-      color: #2e7d32;
-    }
-
-    button {
-      padding: 12px 18px;
-      margin: 8px;
-      border: none;
-      border-radius: 8px;
-      background: #43a047;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    #box {
-      margin-top: 20px;
-      padding: 15px;
-      background: white;
-      border-radius: 10px;
-      display: inline-block;
-      max-width: 400px;
-    }
-
-    img {
-      width: 120px;
-      margin-top: 15px;
-    }
-  </style>
 </head>
 
-<body>
+<body style="font-family: Arial; text-align:center; background:#e8f5e9; padding:20px;">
 
 <h1>🌍 Dita e Tokës</h1>
 
@@ -53,21 +14,19 @@
 <button onclick="keshilla()">🌱 Këshilla</button>
 <button onclick="quiz()">🎮 Quiz</button>
 
-<div id="box">Kliko një buton 😊</div>
-
-<br>
-
-<img src="https://cdn-icons-png.flaticon.com/512/414/414927.png">
+<p id="box" style="margin-top:20px; background:white; padding:15px; display:inline-block; border-radius:10px;">
+Kliko një buton 😊
+</p>
 
 <script>
 function info() {
   document.getElementById("box").innerHTML =
-    "🌍 Dita e Tokës festohet më 22 Prill.";
+    "🌍 Dita e Tokës festohet më 22 Prill çdo vit.";
 }
 
 function keshilla() {
   document.getElementById("box").innerHTML =
-    "🌱 Riciklo, mos ndot, mbill pemë.";
+    "🌱 Riciklo<br>♻️ Mos ndot<br>🌳 Mbill pemë";
 }
 
 function quiz() {
