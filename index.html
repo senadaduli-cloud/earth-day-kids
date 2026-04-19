@@ -6,37 +6,76 @@
   <title>Dita e Tokës 🌍</title>
 </head>
 
-<body style="font-family: Arial; text-align:center; background:#e8f5e9; padding:20px;">
+<body style="font-family: Arial; background:#e8f5e9; text-align:center; padding:20px;">
 
 <h1>🌍 Dita e Tokës</h1>
+<p>Një aplikacion edukativ për të mësuar si ta mbrojmë planetin 🌱</p>
 
-<button onclick="info()">📘 Info</button>
+<!-- IMAZHI KRYESOR -->
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg"
+     alt="Toka" 
+     style="width:200px; border-radius:50%; margin:15px;">
+
+<br>
+
+<button onclick="info()">📘 Çfarë është Toka?</button>
+<button onclick="problemet()">⚠️ Problemet</button>
 <button onclick="keshilla()">🌱 Këshilla</button>
 <button onclick="quiz()">🎮 Quiz</button>
 
-<p id="box" style="margin-top:20px; background:white; padding:15px; display:inline-block; border-radius:10px;">
-Kliko një buton 😊
-</p>
+<div id="box" style="margin-top:20px; background:white; padding:20px; border-radius:10px; display:inline-block; max-width:650px;">
+Kliko një buton për të mësuar 😊
+</div>
 
 <script>
+
 function info() {
   document.getElementById("box").innerHTML =
-    "🌍 Dita e Tokës festohet më 22 Prill çdo vit.";
+    "<h3>🌍 Çfarë është Toka?</h3>" +
+    "<img src='https://cdn-icons-png.flaticon.com/512/415/415733.png' width='100'><br><br>" +
+    "Toka është planeti ku jetojmë. Ajo është i vetmi planet i njohur me jetë.<br><br>" +
+    "Ka ujë 🌊, ajër 🌬️ dhe tokë 🌱 që lejojnë jetën.";
+}
+
+function problemet() {
+  document.getElementById("box").innerHTML =
+    "<h3>⚠️ Problemet e Tokës</h3>" +
+    "<img src='https://cdn-icons-png.flaticon.com/512/427/427735.png' width='100'><br><br>" +
+    "• Ndotja e ajrit 🚗<br>" +
+    "• Plastika në oqeane 🌊<br>" +
+    "• Prerja e pemëve 🌳<br>" +
+    "• Ndryshimet klimatike 🌡️";
 }
 
 function keshilla() {
   document.getElementById("box").innerHTML =
-    "🌱 Riciklo<br>♻️ Mos ndot<br>🌳 Mbill pemë";
+    "<h3>🌱 Si ta mbrojmë Tokën?</h3>" +
+    "<img src='https://cdn-icons-png.flaticon.com/512/2909/2909765.png' width='100'><br><br>" +
+    "♻️ Riciklo<br>" +
+    "🌳 Mbill pemë<br>" +
+    "🚲 Përdor biçikletën<br>" +
+    "💧 Kurse ujin<br>" +
+    "🚯 Mos ndot natyrën";
 }
 
 function quiz() {
-  let a = prompt("A duhet ta mbrojmë Tokën? (po/jo)");
-  if (a && a.toLowerCase() === "po") {
-    alert("Bravo! 🌟");
-  } else {
-    alert("Provo përsëri 😊");
-  }
+  let score = 0;
+
+  let q1 = prompt("1. Çfarë prodhojnë pemët?");
+  if (q1 && q1.toLowerCase().includes("oksigjen")) score++;
+
+  let q2 = prompt("2. A duhet të riciklojmë? (po/jo)");
+  if (q2 && q2.toLowerCase() === "po") score++;
+
+  let q3 = prompt("3. A është plastika e dëmshme për oqeanin? (po/jo)");
+  if (q3 && q3.toLowerCase() === "po") score++;
+
+  document.getElementById("box").innerHTML =
+    "<h3>🎮 Rezultati yt</h3>" +
+    "<p>Ke marrë " + score + " nga 3 pikë.</p>" +
+    (score === 3 ? "🌟 Shkëlqyeshëm!" : "👍 Shumë mirë, vazhdo të mësosh!");
 }
+
 </script>
 
 </body>
