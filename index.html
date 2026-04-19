@@ -23,6 +23,7 @@
       background: #43a047;
       color: white;
       cursor: pointer;
+      font-size: 15px;
     }
 
     #box {
@@ -31,111 +32,97 @@
       padding: 20px;
       border-radius: 12px;
       display: inline-block;
-      max-width: 700px;
+      max-width: 750px;
       text-align: left;
-    }
-
-    .earth {
-      width: 130px;
-      animation: rrotullo 10s linear infinite;
-    }
-
-    @keyframes rrotullo {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    .cert {
-      background: #fff3cd;
-      padding: 15px;
-      border: 2px dashed #2e7d32;
-      margin-top: 15px;
-      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
   </style>
 </head>
 
 <body>
 
-<h1>🌍 Dita e Tokës - Loja Edukative</h1>
-<p>Fitoni pikë dhe merrni certifikatë 🏆</p>
+<h1>🌍 Dita e Tokës</h1>
+<p>Projekt edukativ për nxënësit 📚</p>
 
-<img class="earth" src="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg">
-
-<br>
-
-<button onclick="info()">📘 Mësim</button>
-<button onclick="quiz()">🎮 Filloni Kuizin</button>
-<button onclick="reset()">🔄 Rifillo</button>
+<button onclick="mesim()">📘 Mësim</button>
+<button onclick="probleme()">⚠️ Probleme</button>
+<button onclick="keshilla()">🌱 Këshilla</button>
+<button onclick="quiz()">🎮 Kuiz</button>
 
 <div id="box">
-Kliko “Mësim” ose “Filloni Kuizin” 😊
+Zgjidh një seksion për të mësuar 😊
 </div>
 
 <script>
 
-let piket = 0;
-
-function info() {
+function mesim() {
   document.getElementById("box").innerHTML =
-    "<h2>📘 Mësim për Tokën</h2>" +
-    "<p>Toka është planeti ku jetojmë.</p>" +
-    "<p>Ajo ka ujë 🌊, ajër 🌬️ dhe tokë 🌱.</p>" +
-    "<p>Ne duhet ta mbrojmë nga ndotja dhe shkatërrimi.</p>";
+    "<h2>📘 Mësim: Çfarë është Toka?</h2>" +
+
+    "<p><b>Toka</b> është planeti ku jetojmë dhe është i vetmi i njohur me jetë.</p>" +
+
+    "<p>🌍 Ajo ka 3 pjesë kryesore për jetën:</p>" +
+    "<ul>" +
+    "<li>🌬️ Atmosfera – ajri që ne thithim</li>" +
+    "<li>🌊 Hidrosfera – të gjitha ujërat (dete, lumenj, oqeane)</li>" +
+    "<li>🌱 Litosfera – toka dhe shkëmbinjtë</li>" +
+    "</ul>" +
+
+    "<p>☀️ Toka rrotullohet rreth Diellit dhe kjo krijon stinët.</p>" +
+
+    "<p>🌿 Pa Tokën nuk do të kishte njerëz, kafshë apo bimë.</p>";
+}
+
+function probleme() {
+  document.getElementById("box").innerHTML =
+    "<h2>⚠️ Problemet e Tokës</h2>" +
+
+    "<ul>" +
+    "<li>🚗 Ndotja e ajrit nga makinat dhe fabrikat</li>" +
+    "<li>🌊 Plastika në oqeane dhe dete</li>" +
+    "<li>🌳 Prerja e pyjeve (shpyllëzimi)</li>" +
+    "<li>🔥 Ngrohja globale dhe ndryshimi i klimës</li>" +
+    "</ul>" +
+
+    "<p>Këto probleme dëmtojnë kafshët, bimët dhe njerëzit.</p>";
+}
+
+function keshilla() {
+  document.getElementById("box").innerHTML =
+    "<h2>🌱 Këshilla për të mbrojtur Tokën</h2>" +
+
+    "<ul>" +
+    "<li>♻️ Riciklo plastikën, letrën dhe metalin</li>" +
+    "<li>🌳 Mbill pemë dhe kujdesu për natyrën</li>" +
+    "<li>💧 Kurse ujin</li>" +
+    "<li>🚲 Përdor biçikletën ose ec në këmbë</li>" +
+    "<li>🚯 Mos hidh mbeturina në natyrë</li>" +
+    "<li>💡 Fik dritat kur nuk i përdor</li>" +
+    "</ul>";
 }
 
 function quiz() {
-  piket = 0;
+  let piket = 0;
 
-  let q1 = prompt("1. Sa përqind e Tokës është ujë?");
-  if (q1 === "71") piket++;
+  let q1 = prompt("1. Çfarë prodhojnë pemët?");
+  if (q1 && q1.toLowerCase().includes("oksigjen")) piket++;
 
-  let q2 = prompt("2. Çfarë prodhojnë pemët?");
-  if (q2 && q2.toLowerCase().includes("oksigjen")) piket++;
+  let q2 = prompt("2. A duhet të riciklojmë? (po/jo)");
+  if (q2 === "po") piket++;
 
-  let q3 = prompt("3. A duhet të riciklojmë? (po/jo)");
+  let q3 = prompt("3. A është ndotja e dëmshme? (po/jo)");
   if (q3 === "po") piket++;
 
-  let result = "<h2>🎮 Rezultati yt</h2>" +
-               "<p>Ke marrë " + piket + " nga 3 pikë.</p>";
-
-  if (piket === 3) {
-    result += "<div class='cert'>🏆 CERTIFIKATË<br>Je MIK I TOKËS 🌍</div>";
-  } else if (piket === 2) {
-    result += "<p>👍 Shumë mirë!</p>";
-  } else {
-    result += "<p>📚 Vazhdo të mësosh!</p>";
-  }
-
-  document.getElementById("box").innerHTML = result;
-}
-
-function reset() {
   document.getElementById("box").innerHTML =
-    "Kliko “Mësim” ose “Filloni Kuizin” 😊";
+    "<h2>🎮 Kuizi</h2>" +
+    "<p>Ke marrë " + piket + " nga 3 pikë.</p>" +
+
+    (piket === 3
+      ? "<p>🌟 Shkëlqyeshëm! Je Mik i Tokës!</p>"
+      : "<p>👍 Mirë! Por mund të mësosh edhe më shumë.</p>");
 }
 
 </script>
 
 </body>
 </html>
-<div style="margin-top:20px;">
-  <button onclick="certifikate()">🏆 Merr Certifikatën</button>
-</div>
-
-<div id="cert" style="display:none; margin-top:20px; padding:20px; border:3px dashed #2e7d32; background:#fff8e1; border-radius:10px; max-width:600px; margin:auto;">
-  <h2>🏆 CERTIFIKATË</h2>
-
-  <p>Kjo certifikatë i jepet:</p>
-  <h1 style="color:#2e7d32;">Anaid</h1>
-
-  <p>për pjesëmarrje në projektin:</p>
-  <h3>🌍 Dita e Tokës</h3>
-
-  <p>Je Mik i Tokës 🌱♻️</p>
-
-  <button onclick="window.print()">🖨️ Printo</button>
-</div>
-function certifikate() {
-  document.getElementById("cert").style.display = "block";
-}
