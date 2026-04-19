@@ -1,75 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="sq">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dita e Tokës 🌍</title>
+
   <style>
-    @page {
-        size: A4;
-        margin: 0;
-        background-color: #e8f5e9;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      text-align: center;
-      background: #e8f5e9;
-      margin: 0;
-      padding: 40px;
-      color: #2e7d32;
-    }
-    .container {
-      background: white;
-      border-radius: 20px;
-      padding: 30px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    h1 {
-      font-size: 28pt;
-      margin-bottom: 10pt;
-    }
-    .description {
-      font-size: 14pt;
-      color: #666;
-      margin-bottom: 30pt;
-    }
-    .code-section {
-      text-align: left;
-      background: #272822;
-      color: #f8f8f2;
-      padding: 20px;
-      border-radius: 10px;
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 9pt;
-      overflow: hidden;
-      white-space: pre-wrap;
-      word-wrap: break-word;
-    }
-    .badge {
-      display: inline-block;
-      padding: 5px 15px;
-      background: #43a047;
-      color: white;
-      border-radius: 20px;
-      font-size: 10pt;
-      margin-bottom: 20px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="badge">Kodi Burimor</div>
-    <h1>🌍 Dita e Tokës</h1>
-    <p class="description">Ky është kodi HTML, CSS dhe JS për aplikacionin tuaj.</p>
-    
-    <div class="code-section">
-&lt;!DOCTYPE html&gt;
-&lt;html lang="sq"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;title&gt;Dita e Tokës 🌍&lt;/title&gt;
-  &lt;style&gt;
     body {
       font-family: Arial, sans-serif;
       text-align: center;
@@ -77,7 +13,11 @@
       margin: 0;
       padding: 20px;
     }
-    h1 { color: #2e7d32; }
+
+    h1 {
+      color: #2e7d32;
+    }
+
     button {
       padding: 12px 18px;
       margin: 8px;
@@ -85,38 +25,60 @@
       border-radius: 8px;
       background: #43a047;
       color: white;
+      font-size: 16px;
       cursor: pointer;
     }
+
     #box {
       margin-top: 20px;
       padding: 15px;
       background: white;
       border-radius: 10px;
       display: inline-block;
+      max-width: 400px;
     }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;🌍 Dita e Tokës&lt;/h1&gt;
-  &lt;button onclick="info()"&gt;📘 Info&lt;/button&gt;
-  &lt;button onclick="keshilla()"&gt;🌱 Këshilla&lt;/button&gt;
-  &lt;button onclick="quiz()"&gt;🎮 Quiz&lt;/button&gt;
-  &lt;div id="box"&gt;Kliko një buton 😊&lt;/div&gt;
-  &lt;script&gt;
-    function info() {
-      document.getElementById("box").innerHTML = "Dita e Tokës: 22 Prill.";
+
+    img {
+      width: 120px;
+      margin-top: 15px;
     }
-    function keshilla() {
-      document.getElementById("box").innerHTML = "Riciklo dhe mbill pemë! 🌱";
-    }
-    function quiz() {
-      let a = prompt("A duhet ta mbrojmë Tokën?");
-      if(a && a.toLowerCase() === "po") alert("Bravo! 🌟");
-    }
-  &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-    </div>
-  </div>
+  </style>
+</head>
+
+<body>
+
+<h1>🌍 Dita e Tokës</h1>
+
+<button onclick="info()">📘 Info</button>
+<button onclick="keshilla()">🌱 Këshilla</button>
+<button onclick="quiz()">🎮 Quiz</button>
+
+<div id="box">Kliko një buton 😊</div>
+
+<br>
+
+<img src="https://cdn-icons-png.flaticon.com/512/414/414927.png">
+
+<script>
+function info() {
+  document.getElementById("box").innerHTML =
+    "🌍 Dita e Tokës festohet më 22 Prill.";
+}
+
+function keshilla() {
+  document.getElementById("box").innerHTML =
+    "🌱 Riciklo, mos ndot, mbill pemë.";
+}
+
+function quiz() {
+  let a = prompt("A duhet ta mbrojmë Tokën? (po/jo)");
+  if (a && a.toLowerCase() === "po") {
+    alert("Bravo! 🌟");
+  } else {
+    alert("Provo përsëri 😊");
+  }
+}
+</script>
+
 </body>
 </html>
